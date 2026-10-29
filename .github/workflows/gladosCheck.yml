@@ -12,6 +12,11 @@ on:
   watch:
     types: started
 
+# keepalive 需要 actions:write 才能通过 API 重新启用 workflow；checkout 需要 contents:read
+permissions:
+  contents: read
+  actions: write
+
 jobs:
   build:
     name: glados/railgun checkin
